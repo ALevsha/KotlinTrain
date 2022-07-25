@@ -18,4 +18,72 @@ fun main(args: Array<String>){
     var arrayText = arrayOf("awdqawd", "ggg","kkkk")
 
     // обращение к элементам массива аналогично как в Java
+
+    // выполненится 11 раз
+    for(i in 0..10){
+        println("i = $i")
+    }
+    println()
+
+    // выполненится 10 раз
+    for(i in 0 until 10){
+        println("i = $i")
+    }
+
+    println()
+
+    // от 0 до 10 невключительно с шагом 3
+    for(i in 0 until 10 step 3){
+        println("i = $i")
+    }
+
+    println()
+
+    // с 10 до 0 включительно
+    for (i in  10 downTo 0){
+        println("i = $i")
+    }
+
+    println()
+
+    // от первого элемента до последнего
+    for (i in 0 until arrayText.size){ // есть отдельно arrayText.indices
+        println("i = $i, value = ${arrayText[i]}")
+    }
+
+    println()
+
+    // пробег по индексам
+    for (index in arrayText.indices){
+        println("i = $index, value = ${arrayText[index]}")
+    }
+
+    println()
+
+    // пробег по элементам
+    for (value in arrayText){
+        println("value = $value")
+    }
+
+    println()
+
+    // пробег по элементам, если нужны и индексы и элементы
+    for ((index, value) in arrayText.withIndex()){
+        println("i = $index, value = $value")
+    }
+
+    // если необходимо сделать пропуск из внешнего цикла, его можно обозвать
+    // в формате: имя@
+    mainLoop@ for ((index, value) in arrayText.withIndex()) {
+        for ((index2, value2) in arrayText.withIndex()) {
+            println("i = $index, value = $value")
+            if (index2 % 2 == 0){
+                continue@mainLoop // метка выхода
+            }
+        }
+    }
+
+    /* цикл while (do while) аналогичен Java.
+     Также есть и break и continue
+     */
 }

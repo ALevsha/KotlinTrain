@@ -19,9 +19,13 @@ public class JMassive {
         arrayText[1] = "ggg";
         arrayText[2] = "kkkk";
 
-
+        // используется если нужен индекс позиции
         for (int i = 0; i < arrayText.length; i++){
             System.out.println(i + " item" + arrayText[i]);
+        }
+        // если индекс позиции не важен
+        for(String value: arrayText){
+            System.out.println("item = " + value);
         }
     }
 }
